@@ -1,3 +1,10 @@
-1. table header non scrollable
+add select column - done but is that needed
+table header non scrollable
 2. Add route guard
-3. Add select column
+3. Disable view cart till add to cart is run
+4. Add to cart - 
+    1. logic to validate form
+    2. populate cart data 
+    3. enable & emphasize view cart link
+5. Add sort logic to cart list
+
