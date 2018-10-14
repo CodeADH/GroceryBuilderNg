@@ -1,0 +1,72 @@
+<p 
+>Please choose your Products and click Add to Cart</p>
+<form #form="ngForm" novalidate>
+    <br>
+    <table class="table table-bordered"  border="1" style="align-self: center">
+        <thead>
+            <tr class="row">
+                <th class="col-md-1">Select</th>
+                <th class="col-md-2">Name</th>
+                <th class="col-md-3">Quantity</th>
+                <th class="col-md-2">Unit</th>
+                <th class="col-md-2">Vendor</th>
+            </tr> 
+        </thead>
+        <tbody >
+            <tr class="row" *ngFor="let product of productlist">
+            <td class="col-md-1">
+                    <div class="form-check">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" value="">
+                            </label>
+                          </div>
+            </td>
+            <td class="col-md-2">{{product.name}}</td>
+            <td class="col-md-3">{{product.quantity}}
+                    <button class="btn btn-success btn-md" style="position: relative" (click)="add(product.id)">
+                        <i class="glyphicon glyphicon-plus"></i>Add
+                    </button>
+                    <button class="btn btn-danger btn-md" (click)="del(product.id)">
+                        <i class="glyphicon glyphicon-minus"></i>Remove
+                    </button>
+            </td>
+            <td class="col-md-2">{{product.unit}}</td>
+            <td class="col-md-2">
+                    <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              Select
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                              <a class="dropdown-item-text" href="#">Balaji</a>
+                              <a class="dropdown-item-text" href="#">Bigbasket</a>
+                              <a class="dropdown-item-text" href="#">Other</a>
+                              <span class="dropdown-item-text">Just Text</span>
+                            </div>
+                    </div>
+                    
+                    <!-->select name="vendorselection" placeholder="Balaji" required ngModel>
+                            <option value="Balaji">Balaji</option>
+                            <option value="Bigbasket">BigBasket</option>
+                            <option value="Other">Other</option>
+                    </select-->
+            </td>
+            </tr>
+        </tbody>
+        <!--tfoot>
+                <tr>
+                <td>Total Price</td>
+                <td colspan="3" class="text-right">{{total | currency: 'INR' }}</td>
+                </tr>
+        </tfoot-->
+    </table>
+    
+    <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
+    <button type="submit" style="float:right">
+        Add to cart!
+    </button>
+    <div [routerLink]="['/cart']">Click to see cart!
+    </div>
+    </nav>
+</form>
+
+{{form.pristine}}
