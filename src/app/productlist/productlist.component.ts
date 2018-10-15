@@ -9,6 +9,7 @@ import { ProductdataService } from '../productdata.service';
 export class ProductlistComponent implements OnInit {
   private productlist;
   constructor(private productDataService:ProductdataService) { }
+  vendors= ['Balaji','BigBasket','Other'];
 
   ngOnInit() {
     this.productlist = this.productDataService.getAllProducts();

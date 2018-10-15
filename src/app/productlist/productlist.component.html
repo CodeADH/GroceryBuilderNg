@@ -1,8 +1,8 @@
-<p 
->Please choose your Products and click Add to Cart</p>
+<br>
+<p>Please choose your Products and click Add to Cart</p>
 <form #form="ngForm" novalidate>
     <br>
-    <table class="table table-bordered"  border="1" style="align-self: center">
+    <!--table class="table table-dark"  border="1" style="align-self: center">
         <thead>
             <tr class="row">
                 <th class="col-md-1">Select</th>
@@ -12,17 +12,28 @@
                 <th class="col-md-2">Vendor</th>
             </tr> 
         </thead>
+    </table-->
+    <table class="table table-bordered"  border="1" style="align-self: center">
+        <thead>
+            <tr class="row">
+                <!--th class="col-md-1">Select</th-->
+                <th class="col-md-2">Name</th>
+                <th class="col-md-3">Quantity</th>
+                <th class="col-md-2">Unit</th>
+                <th class="col-md-4">Vendor</th>
+            </tr> 
+        </thead>
         <tbody >
             <tr class="row" *ngFor="let product of productlist">
-            <td class="col-md-1">
+            <!--td class="col-md-1">
                     <div class="form-check">
                             <label class="form-check-label">
                               <input type="checkbox" class="form-check-input" value="">
                             </label>
                           </div>
-            </td>
+            </td-->
             <td class="col-md-2">{{product.name}}</td>
-            <td class="col-md-3">{{product.quantity}}
+            <td class="col-md-3" name='Quantity'>{{product.quantity}}
                     <button class="btn btn-success btn-md" style="position: relative" (click)="add(product.id)">
                         <i class="glyphicon glyphicon-plus"></i>Add
                     </button>
@@ -31,8 +42,8 @@
                     </button>
             </td>
             <td class="col-md-2">{{product.unit}}</td>
-            <td class="col-md-2">
-                    <div class="dropdown">
+            <td class="col-md-4">
+                    <!--div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Select
                             </button>
@@ -42,13 +53,22 @@
                               <a class="dropdown-item-text" href="#">Other</a>
                               <span class="dropdown-item-text">Just Text</span>
                             </div>
-                    </div>
+                    </div-->
                     
                     <!-->select name="vendorselection" placeholder="Balaji" required ngModel>
                             <option value="Balaji">Balaji</option>
                             <option value="Bigbasket">BigBasket</option>
                             <option value="Other">Other</option>
                     </select-->
+
+                    <div class="form-group">
+                        <!--label for="vendors">Please Select:</label-->
+                        <select class="form-control" id="vendors">
+                          <option *ngFor="let vend of vendors">
+                              {{vend}}
+                            </option>
+                        </select>
+                    </div>
             </td>
             </tr>
         </tbody>
