@@ -7,4 +7,5 @@ table header non scrollable
     2. populate cart data 
     3. enable & emphasize view cart link
 5. Add sort logic to cart list
+6.navbar should not overlap other elements
 

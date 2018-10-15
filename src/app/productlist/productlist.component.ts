@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductdataService } from '../productdata.service';
+import { Productlist } from '../models/productlist.model';
 
 @Component({
   selector: 'app-productlist',
@@ -10,6 +11,7 @@ export class ProductlistComponent implements OnInit {
   private productlist;
   constructor(private productDataService:ProductdataService) { }
   vendors= ['Balaji','BigBasket','Other'];
+  //model= new Productlist('Balaji');
 
   ngOnInit() {
     this.productlist = this.productDataService.getAllProducts();
@@ -24,6 +26,8 @@ export class ProductlistComponent implements OnInit {
         { 
          // if(this.productlist[i].unit == "Kg")
           this.productlist[i].quantity++;
+          document.getElementById("cartbutton").disabled=false;
+
         }
       
     }
@@ -34,9 +38,15 @@ export class ProductlistComponent implements OnInit {
     console.log(id);
     for(let i=0;i<this.productlist.length;i++){
       if(id === this.productlist[i].id)
-        if(this.productlist[i].quantity>0)
-          this.productlist[i].quantity--;
+        {
+          if(this.productlist[i].quantity>0)
+            this.productlist[i].quantity--; 
+          /*elseif(this.productlist[i].quantity=0)      
+              document.getElementById("cartbutton").disabled=true;*/
+        }
     }
+
+    
   }
 
 }

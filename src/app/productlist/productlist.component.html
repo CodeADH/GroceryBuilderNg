@@ -20,7 +20,7 @@
                 <th class="col-md-2">Name</th>
                 <th class="col-md-3">Quantity</th>
                 <th class="col-md-2">Unit</th>
-                <th class="col-md-4">Vendor</th>
+                <th class="col-md-2">Vendor</th>
             </tr> 
         </thead>
         <tbody >
@@ -34,15 +34,15 @@
             </td-->
             <td class="col-md-2">{{product.name}}</td>
             <td class="col-md-3" name='Quantity'>{{product.quantity}}
-                    <button class="btn btn-success btn-md" style="position: relative" (click)="add(product.id)">
+                    <button class="btn btn-success btn-sm" style="position: relative" (click)="add(product.id)">
                         <i class="glyphicon glyphicon-plus"></i>Add
                     </button>
-                    <button class="btn btn-danger btn-md" (click)="del(product.id)">
+                    <button class="btn btn-danger btn-sm" (click)="del(product.id)">
                         <i class="glyphicon glyphicon-minus"></i>Remove
                     </button>
             </td>
             <td class="col-md-2">{{product.unit}}</td>
-            <td class="col-md-4">
+            <td class="col-md-2">
                     <!--div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Select
@@ -63,7 +63,8 @@
 
                     <div class="form-group">
                         <!--label for="vendors">Please Select:</label-->
-                        <select class="form-control" id="vendors">
+                        <select class="form-control" name="vendor" id="vendors"> <!--[(ngModel)]="model.vendor" -->
+                          <option value="default">Select a Vendor..</option>  
                           <option *ngFor="let vend of vendors">
                               {{vend}}
                             </option>
@@ -81,7 +82,7 @@
     </table>
     
     <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
-    <button type="submit" style="float:right">
+    <button type="submit" style="float:right" disabled id='cartbutton' >
         Add to cart!
     </button>
     <div [routerLink]="['/cart']">Click to see cart!
