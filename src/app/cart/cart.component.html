@@ -3,9 +3,9 @@
 <br>
 <br>
 
-<table class="table table-striped"  border="1" style="align-self: center">
+<table class="table table-striped"  style="align-self: center">
   <thead>
-      <tr class="row" style="padding-left:10px" >
+      <tr class="row" >
           <!--th>Id</th-->
           <th class="col-md-4">Name</th>
           <th class="col-md-2">Quantity</th>
@@ -14,7 +14,7 @@
       </tr> 
   </thead>
   <tbody >
-      <tr class="row" style="padding-left:10px" *ngFor="let cart of cartproduct">
+      <tr class="row" *ngFor="let cart of cartproduct">
           <!--td>{{product.id}}</td> -->
           <td class="col-md-4">{{cart.product.name}}</td>
           <td class="col-md-2">{{cart.product.quantity}}</td>

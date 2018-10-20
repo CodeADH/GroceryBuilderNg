@@ -24,7 +24,7 @@
             </tr> 
         </thead>
         <tbody >
-            <tr class="row" *ngFor="let product of productlist">
+            <tr class="row" *ngFor="let product of productlist; let count=index">
             <!--td class="col-md-1">
                     <div class="form-check">
                             <label class="form-check-label">
@@ -63,7 +63,7 @@
 
                     <div class="form-group">
                         <!--label for="vendors">Please Select:</label-->
-                        <select class="form-control" name="vendor" id="vendors"> <!--[(ngModel)]="model.vendor" -->
+                        <select  [ngModel]="selected" (ngModelChange)="selectedChanged($event,count)" class="form-control" name="vendor" id="count"> <!--[(ngModel)]="model.vendor" -->
                           <option value="default">Select a Vendor..</option>  
                           <option *ngFor="let vend of vendors">
                               {{vend}}
@@ -82,7 +82,7 @@
     </table>
     
     <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
-    <button type="submit" style="float:right" id='cartbutton' [disabled]="form.invalid" >
+    <button type="submit" #addcart style="float:right" id='cartbutton' [disabled]="form.invalid" >
         Add to cart!
     </button>
     <div [routerLink]="['/cart']">Click to see cart!

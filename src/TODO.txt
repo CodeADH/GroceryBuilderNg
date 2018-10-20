@@ -8,4 +8,5 @@ table header non scrollable
     3. enable & emphasize view cart link
 5. Add sort logic to cart list
 6.navbar should not overlap other elements
+7. back to product list should be fresh reload and say start again
 
