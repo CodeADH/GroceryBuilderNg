@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'list', component: ProductlistComponent },
   { path: 'cart', component: CartComponent },
   { path: '', redirectTo: '/list', pathMatch:'full'},
+  { path: '/', redirectTo: '/list', pathMatch:'full'},
   //TO DO: add route guard
 ];
 

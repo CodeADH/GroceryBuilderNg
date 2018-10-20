@@ -14,13 +14,14 @@
       </tr> 
   </thead>
   <tbody >
-      <tr class="row" style="padding-left:10px" *ngFor="let cartproduct of cartlist">
-      <!--td>{{product.id}}</td> -->
-      <td class="col-md-4">{{cartproduct.name}}</td>
-      <td class="col-md-4">{{cartproduct.quantity}}</td>
-      <td class="col-md-4">{{cartproduct.unit}}</td>
-      <td class="col-md-4">{{cartproduct.vendor}}</td>
+      <tr class="row" style="padding-left:10px" *ngFor="let cart of cartproduct">
+          <!--td>{{product.id}}</td> -->
+          <td class="col-md-4">{{cart.product.name}}</td>
+          <td class="col-md-2">{{cart.product.quantity}}</td>
+          <td class="col-md-1">{{cart.product.unit}}</td>
+          <td class="col-md-3">{{cart.vendor}}</td>
       </tr>
+
   </tbody>
   <!--tfoot>
           <tr>
@@ -32,7 +33,7 @@
 
 <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
   <button type="submit" style="float:right">
-    <div [routerLink]="['/']">Back to Product List!</div>
+    <div [routerLink]="['/'] ">Back to Product List!</div>
   </button>
 </nav>
 

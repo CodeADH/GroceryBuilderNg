@@ -1,6 +1,8 @@
 export class Productlist{
     
+    public vendor:string;
+
     constructor() {
-        public vendor:string;
     }
+
 }

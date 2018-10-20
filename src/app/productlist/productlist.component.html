@@ -1,6 +1,6 @@
 <br>
 <p>Please choose your Products and click Add to Cart</p>
-<form #form="ngForm" novalidate>
+<form #form="ngForm" (submit)="submitForm()" novalidate>
     <br>
     <!--table class="table table-dark"  border="1" style="align-self: center">
         <thead>
@@ -34,10 +34,10 @@
             </td-->
             <td class="col-md-2">{{product.name}}</td>
             <td class="col-md-3" name='Quantity'>{{product.quantity}}
-                    <button class="btn btn-success btn-sm" style="position: relative" (click)="add(product.id)">
+                    <button type="button" class="btn btn-success btn-sm" style="position: relative" (click)="add(product.id)">
                         <i class="glyphicon glyphicon-plus"></i>Add
                     </button>
-                    <button class="btn btn-danger btn-sm" (click)="del(product.id)">
+                    <button type="button" class="btn btn-danger btn-sm" (click)="del(product.id)">
                         <i class="glyphicon glyphicon-minus"></i>Remove
                     </button>
             </td>
@@ -82,7 +82,7 @@
     </table>
     
     <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
-    <button type="submit" style="float:right" disabled id='cartbutton' >
+    <button type="submit" style="float:right" id='cartbutton' [disabled]="form.invalid" >
         Add to cart!
     </button>
     <div [routerLink]="['/cart']">Click to see cart!

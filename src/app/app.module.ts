@@ -8,6 +8,7 @@ import { CartComponent } from './cart/cart.component';
 import { ProductdataService } from './productdata.service';
 import { bootstrap } from 'bootstrap';
 import { AppRoutingModule } from './/app-routing.module';
+import { CartdataService } from './cartdata.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './/app-routing.module';
     AppRoutingModule
   ],
   providers: [
-    ProductdataService
+    ProductdataService,
+    CartdataService
   ],
   bootstrap: [AppComponent]
 })
