@@ -4,3 +4,18 @@ td,th,tr{
     padding-left:20px;
     height: 50px;
 }
+.table-bordered thead {
+    width: 97.5%;
+  }
+  .table-bordered tbody {
+    height: 420px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .table-bordered thead, .table-bordered tbody, .table-bordered tr, .table-bordered td, .table-bordered th {
+    display: block;
+  }
+  .table-bordered tbody td, .table-bordered thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+  }

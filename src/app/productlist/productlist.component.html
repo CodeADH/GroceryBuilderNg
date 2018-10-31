@@ -2,18 +2,17 @@
 <p>Please choose your Products and click Add to Cart</p>
 <form #form="ngForm" (submit)="submitForm()" novalidate>
     <br>
-    <!--table class="table table-dark"  border="1" style="align-self: center">
-        <thead>
-            <tr class="row">
-                <th class="col-md-1">Select</th>
-                <th class="col-md-2">Name</th>
-                <th class="col-md-3">Quantity</th>
-                <th class="col-md-2">Unit</th>
-                <th class="col-md-2">Vendor</th>
-            </tr> 
-        </thead>
+    <!--table #secondtable class="table table-bordered" border="1" style="align-self: center">
+        <th>
+            dummy
+        </th>
+        <tr>
+            <td>
+                row
+            </td>
+        </tr>
     </table-->
-    <table class="table table-bordered"  border="1" style="align-self: center">
+    <table #maintable class="table table-bordered"  border="1" style="align-self: center">
         <thead>
             <tr class="row">
                 <!--th class="col-md-1">Select</th-->
@@ -23,71 +22,74 @@
                 <th class="col-md-2">Vendor</th>
             </tr> 
         </thead>
-        <tbody >
+        <tbody>
             <tr class="row" *ngFor="let product of productlist; let count=index">
-            <!--td class="col-md-1">
-                    <div class="form-check">
-                            <label class="form-check-label">
-                              <input type="checkbox" class="form-check-input" value="">
-                            </label>
-                          </div>
-            </td-->
-            <td class="col-md-2">{{product.name}}</td>
-            <td class="col-md-3" name='Quantity'>{{product.quantity}}
-                    <button type="button" class="btn btn-success btn-sm" style="position: relative" (click)="add(product.id)">
-                        <i class="glyphicon glyphicon-plus"></i>Add
-                    </button>
-                    <button type="button" class="btn btn-danger btn-sm" (click)="del(product.id)">
-                        <i class="glyphicon glyphicon-minus"></i>Remove
-                    </button>
-            </td>
-            <td class="col-md-2">{{product.unit}}</td>
-            <td class="col-md-2">
-                    <!--div class="dropdown">
-                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                              Select
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
-                              <a class="dropdown-item-text" href="#">Balaji</a>
-                              <a class="dropdown-item-text" href="#">Bigbasket</a>
-                              <a class="dropdown-item-text" href="#">Other</a>
-                              <span class="dropdown-item-text">Just Text</span>
+                <!--td class="col-md-1">
+                        <div class="form-check">
+                                <label class="form-check-label">
+                                <input type="checkbox" class="form-check-input" value="">
+                                </label>
                             </div>
-                    </div-->
-                    
-                    <!-->select name="vendorselection" placeholder="Balaji" required ngModel>
-                            <option value="Balaji">Balaji</option>
-                            <option value="Bigbasket">BigBasket</option>
-                            <option value="Other">Other</option>
-                    </select-->
-
-                    <div class="form-group">
-                        <!--label for="vendors">Please Select:</label-->
-                        <select  [ngModel]="selected" (ngModelChange)="selectedChanged($event,count)" class="form-control" name="vendor" id="count"> <!--[(ngModel)]="model.vendor" -->
-                          <option value="default">Select a Vendor..</option>  
-                          <option *ngFor="let vend of vendors">
-                              {{vend}}
-                            </option>
-                        </select>
-                    </div>
-            </td>
+                </td-->
+                <td class="col-md-2">{{product.name}}</td>
+                <td class="col-md-3" name='Quantity'>{{product.quantity}}
+                        <button type="button" class="btn btn-success btn-sm" style="position: relative" 
+                        (click)="add(product.id)">
+                        Add</button>
+                        <button type="button" class="btn btn-danger btn-sm" style="position: relative" 
+                        (click)="del(product.id)">
+                        Remove</button>
+                </td>
+                <td class="col-md-2">{{product.unit}}</td>
+                <td class="col-md-2">
+                        <!--div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                Select
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                                <a class="dropdown-item-text" href="#">Balaji</a>
+                                <a class="dropdown-item-text" href="#">Bigbasket</a>
+                                <a class="dropdown-item-text" href="#">Other</a>
+                                <span class="dropdown-item-text">Just Text</span>
+                                </div>
+                        </div-->
+                        
+                        <!--select name="vendorselection" placeholder="Balaji" required ngModel>
+                                <option value="Balaji">Balaji</option>
+                                <option value="Bigbasket">BigBasket</option>
+                                <option value="Other">Other</option>
+                        </select-->
+                
+                        <div class="form-group">
+                            <!--label for="vendors">Please Select:</label-->
+                            <select  [ngModel]="selected" (ngModelChange)="selectedChanged($event,count)" 
+                                class="form-control vendor-drop" name="vendor" #vendor id='{{count}}'
+                                disabled><!--="vendIsDisabled"> <!--[(ngModel)]="model.vendor" -->
+                                <option value="default">Select a Vendor..</option>  
+                                <option *ngFor="let vend of vendors">
+                                {{vend}}
+                                </option>
+                            </select>
+                        </div>
+                </td>  
             </tr>
         </tbody>
-        <!--tfoot>
+            <!--tfoot>
                 <tr>
                 <td>Total Price</td>
                 <td colspan="3" class="text-right">{{total | currency: 'INR' }}</td>
                 </tr>
-        </tfoot-->
+            </tfoot-->
     </table>
     
     <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
-    <button type="submit" #addcart style="float:right" id='cartbutton' [disabled]="form.invalid" >
-        Add to cart!
-    </button>
-    <div [routerLink]="['/cart']">Click to see cart!
-    </div>
+        <button type="submit" #addcart style="float:right" id='cartbutton' [disabled]="form.invalid" >
+            Submit cart!
+        </button>
+        <button #viewcart [routerLink]="['/cart']">View cart!
+        </button>
     </nav>
 </form>
+
 
 {{form.pristine}}
