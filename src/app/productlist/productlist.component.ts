@@ -59,14 +59,15 @@ export class ProductlistComponent implements OnInit {
     }
 
   submitForm(){
-    //console.log(this.cartproduct);
+    /*console.log(this.cartproduct);
     console.log("in submit function")
     console.log("product 0 qty" + this.productlist[0].quantity);
-    console.log("product 0 id" + this.productlist[0].id);
+    console.log("product 0 id" + this.productlist[0].id);*/
+    
     let i=0;
-    //this.cartproduct.push(this.productlist[0]);
-    console.log( "here before loop" + this.cartproduct);
-    console.log(this.vendors)
+    // this.cartproduct.push(this.productlist[0]);
+    // console.log( "here before loop" + this.cartproduct);
+    // console.log(this.vendors)
     let j=0;
     console.log(this.tempVendorArr.length);
 
@@ -93,10 +94,9 @@ export class ProductlistComponent implements OnInit {
 
     console.log("reached end of loop" );
     this.viewbutton1.nativeElement.disabled=false;
-    this.viewbutton1.nativeElement.blink= true;  
     this.cartbutton1.nativeElement.disabled=true;
-    this.viewbutton1.nativeElement.color='black';
-    this.renderer.setProperty(this.viewbutton1, 'color','black')
+    this.viewbutton1.nativeElement.style.backgroundColor='magenta';
+    this.cartbutton1.nativeElement.style.backgroundColor='white';
     //console.log( this.cartproduct);
     
     }
@@ -130,13 +130,13 @@ export class ProductlistComponent implements OnInit {
           //prop('enabled');
           var tura  = $(".vendor-drop").get();
          let vendordrop1;
-        // @ViewChild('vendor') vendordrop1;
-         console.log(tura[i]);
+        
+         //console.log(tura[i]);
           //var arr = images.
           //console.log(images);
           this.elem.nativeElement = tura[i];
           this.elem.nativeElement.disabled=false;
-          
+          this.elem.nativeElement.value='default';
           
           //console.log(arr[0]);
           
@@ -146,6 +146,12 @@ export class ProductlistComponent implements OnInit {
           //console.log(this.cartbutton1.nativeElement);
           this.cartbutton1.nativeElement.disabled=false;
           //getElementsByClassName(vendor-drop).item(0);         
+          //this.renderer.addClass(this.cartbutton1,"btn btn-primary"); 
+          console.log(this.cartbutton1.nativeElement.style.backgroundColor)//='1px solid blue';
+          this.cartbutton1.nativeElement.style.backgroundColor='green';
+          console.log(this.cartbutton1.nativeElement.style.backgroundColor)
+          $('cartbutton1').addClass('green');
+          
         }
       
     }
@@ -169,12 +175,12 @@ export class ProductlistComponent implements OnInit {
             }
           }
         }
-          //document.getElementById("cartbutton").disabled=true;*/
+          
     
   }
 
    selectedChanged(value:string, count:number) {
-    console.log("selectedChanged was called " + value + ' '+ count)
+    //console.log("selectedChanged was called " + value + ' '+ count)
     //console.log(this.productlist[count].id);  
           let pid:string = this.productlist[count].id;  
           this.tempVendorArr.push({pid: pid,vendor: value });

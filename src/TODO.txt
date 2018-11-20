@@ -1,12 +1,14 @@
-add select column - done but is that needed
-table header non scrollable
+add select column - done but that is not needed
+table header non scrollable - done
 2. Add route guard
-3. Disable view cart till add to cart is run
+3. Disable view cart till add to cart is run - done
 4. Add to cart - 
-    1. logic to validate form
-    2. populate cart data 
-    3. enable & emphasize view cart link
+    1. logic to validate form - not working
+    2. populate cart data - done
+    3. enable & emphasize view cart link - not needed- Disable and enable working
 5. Add sort logic to cart list
-6.navbar should not overlap other elements
+6. navbar should not overlap other elements
 7. back to product list should be fresh reload and say start again
+8. page to add product to catalogue
+9. welcome page with routes to cart building and add items
 

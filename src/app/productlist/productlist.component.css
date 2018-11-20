@@ -19,3 +19,13 @@ td,th,tr{
     float: left;
     border-bottom-width: 0;
   }
+  .green {
+    background: green
+  }
+h2{
+    color: navy;
+    font-family: Arial, Helvetica, sans-serif
+}
+a{
+  font-size: large;
+}

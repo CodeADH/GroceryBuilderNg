@@ -1,5 +1,9 @@
+<div class="container">
 <br>
-<p>Please choose your Products and click Add to Cart</p>
+<h2>Please choose your Products and click Submit Cart</h2>
+<div style="float:right">
+    <a [routerLink]="['/main']">Back to Home </a>
+</div> 
 <form #form="ngForm" (submit)="submitForm()" novalidate>
     <br>
     <!--table #secondtable class="table table-bordered" border="1" style="align-self: center">
@@ -83,13 +87,14 @@
     </table>
     
     <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
-        <button type="submit" #addcart style="float:right" id='cartbutton' [disabled]="form.invalid" >
+        <button class='btn btn-primary' type="submit" #addcart style="float:right" id='cartbutton' [disabled]="form.invalid" >
             Submit cart!
         </button>
-        <button #viewcart [routerLink]="['/cart']">View cart!
+        <button class='btn btn-secondary' #viewcart [routerLink]="['/cart']">View cart!
         </button>
     </nav>
 </form>
 
 
 {{form.pristine}}
+</div>

@@ -9,12 +9,20 @@ import { ProductdataService } from './productdata.service';
 import { bootstrap } from 'bootstrap';
 import { AppRoutingModule } from './/app-routing.module';
 import { CartdataService } from './cartdata.service';
+import { MainComponent } from './main/main.component';
+import { ModifyComponent } from './modify/modify.component';
+import { AddComponent } from './add/add.component';
+import { RemoveComponent } from './remove/remove.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductlistComponent,
-    CartComponent
+    CartComponent,
+    MainComponent,
+    ModifyComponent,
+    AddComponent,
+    RemoveComponent
   ],
   imports: [
     BrowserModule,

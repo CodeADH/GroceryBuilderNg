@@ -1,3 +1,4 @@
+<div class="container">
 
 <br>
 <br>
@@ -31,12 +32,17 @@
   </tfoot-->
 </table>
 
+<div style="float:right">
+        <a [routerLink]="['/main']">Back to Home </a>
+</div> 
+
 <nav class="navbar fixed-bottom navbar-dark" style="color: white; background-color:#122e6d; height: 50px">
-  <button type="submit" style="float:right">
-    <div [routerLink]="['/'] ">Back to Product List!</div>
+  <button class='btn btn-secondary' type="submit" style="float:right">
+    <div [routerLink]="['/list'] ">Back to Building Cart!</div>
   </button>
 </nav>
 
 
 
+</div>
 

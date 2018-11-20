@@ -16,8 +16,8 @@ export class CartdataService {
   }
 
   getCart():cartItem[]{
-    console.log('inside service');
-    console.log(this.cartproduct);
+    //console.log('inside service');
+    //console.log(this.cartproduct);
     return this.cartproduct;
 
   }

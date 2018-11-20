@@ -1,0 +1,32 @@
+<div class="container">
+<h3>
+  Welcome to Add menu!
+</h3>
+
+<form #form2 ="ngForm" (submit)="submitForm(form2)" novalidate>
+  <div class="form-group">
+    <label>Product Name</label>
+    <input type='text' class="form-control" placeholder="e.g. Wheat" name="ProductName" ngModel required>
+  </div>
+  <div class="form-group">
+    <label>Unit</label>
+    <input type='text' class="form-control" placeholder="e.g. Kg/Ltr/Nos" name="Unit" ngModel required>
+  </div>
+  <!-- id: string;
+ name: string;
+ quantity: number;
+ unit: string;  -->
+ <div ngSubmit>
+  <button class='btn btn-primary' type="submit" #additem id='AddItemButton' [disabled]="form2.invalid" >
+    Add
+  </button>
+</div>
+</form>
+
+<div style="float:right">
+    <a [routerLink]="['/main']">Back to Home </a>
+</div> 
+
+{{form2.pristine}}
+{{form2.valid}}
+</div>

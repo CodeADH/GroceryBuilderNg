@@ -29,4 +29,12 @@ export class ProductdataService {
 
   }
 
+  addProduct(p:Product){
+    console.log('in addProduct')
+    this.productlist.push(p);
+  }
+
+  removeProduct(n:number){
+    this.productlist.slice(n);
+  }
 }
